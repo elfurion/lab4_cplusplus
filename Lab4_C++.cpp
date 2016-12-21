@@ -9,15 +9,15 @@ using namespace std;
 class Figure3D
 {
     public:
-        virtual int GetData()//get data, such as sides or radius
+        virtual int getdata()//get data, such as sides or radius
         {
             return 0;
         }
-        virtual double Square()
+        virtual double square()
         {
             return 0;
         }
-        virtual double Extend()
+        virtual double extend()
         {
             return 0;
         }
@@ -47,7 +47,7 @@ class Polyhedra : public Figure3D
 class Cone : public Spheric
 {
     public:
-        int GetData()
+        int getdata()
         {
             cout << "EnterRadius: ";
             cin >> radius;
@@ -55,11 +55,11 @@ class Cone : public Spheric
             cin >> height;
             return 0;
         }
-        double Square()
+        double square()
         {
             return 3.14*radius*radius;
         }
-        double Extend()
+        double extend()
         {
             return 3.14/3*radius*radius*height;
         }
@@ -67,7 +67,7 @@ class Cone : public Spheric
 class Elipsoid : public Spheric
     {
         public:
-            int GetData()
+            int getdata()
             {
                 cout << "Enter axle (radius), a: ";
                 cin >> a;
@@ -77,11 +77,11 @@ class Elipsoid : public Spheric
                 cin >> c;
                 return 0;
             }
-            double Square()
+            double square()
             {
                 return 2*3.14*a*(a+pow(b,2)/pow((pow(a,2)-pow(b,2)),1/2)*log((a+pow((pow(a,2)- pow(b,2)),1/2))/b));
             }
-            double Extend()
+            double extend()
             {
                 return 4/3*3.14*a*b*c;
             }
@@ -91,23 +91,23 @@ class Elipsoid : public Spheric
 
 
 
-class Sphere : public Spheric
+class Sphere : public spheric
 {
 
     public:
-        int GetData()
+        int getdata()
         {
             cout << "Enter radius: ";
             cin >> radius;
             return 0;
         }
-        double Square()
+        double square()
         {
             return 4*3.14*radius*radius;
         }
     
     
-        double Extend()
+        double extend()
         {
             return 4 / 3 * 3.14*radius*radius*radius;
         }
@@ -117,7 +117,7 @@ class Cylinder : public Spheric
 {
 
     public:
-        int GetData()
+        int getdata()
             {
                 cout << "Enter Radius: ";
                 cin >> radius;
@@ -125,11 +125,11 @@ class Cylinder : public Spheric
                 cin >> height;
                 return 0;
             }
-            double Square()
+            double square()
             {
                 return 3.14*radius*radius;
             }
-            double Extend()
+            double extend()
             {
                 return 3.14*radius*radius*height;
             }
@@ -139,7 +139,7 @@ class Cylinder : public Spheric
 class Parallelepiped : public Polyhedra
 {
     public:
-        int GetSide()
+        int getdata()
             {
                 cout << "Enter Side a: ";
                 cin >> a;
@@ -149,11 +149,11 @@ class Parallelepiped : public Polyhedra
                 cin >> c;
                 return 0;
             }
-        double Square()
+        double square()
             {
                 return  2*(a*b+b*c+a*c);
             }
-        double Extend()
+        double extend()
             {
                 return a*b*c;
             }
@@ -166,17 +166,17 @@ class Cube : public Polyhedra
 {
 
     public:
-        int GetData()
+        int getdata()
             {
                 cout << "Enter Side : ";
                 cin >> a;
                 return 0;
             }
-            double Square()
+            double square()
             {
                 return  6*a*a;
             }
-        double Extend()
+            double extend()
             {
                 return a*a*a;
             }
@@ -202,49 +202,49 @@ int main()
         case '1':
         {
             Spheric *ptr1 = new Cone;
-            ptr1->GetData();
-            cout << "Square = " << (ptr1->Square()) << endl;
-            cout << "Extend = " <<(ptr1->Extend()) << endl;
+            ptr1->getdata();
+            cout << "Square = " << (ptr1->square()) << endl;
+            cout << "Extend = " <<(ptr1->extend()) << endl;
             break;
         }
         case '2':
         {
             Polyhedra *ptr2 = new Parallelepiped;
-            ptr2->GetData();
-            cout << "Square = " << (ptr2->Square()) << endl;
-            cout << "Extend = " << (ptr2->Extend()) << endl;
+            ptr2->getdata();
+            cout << "Square = " << (ptr2->square()) << endl;
+            cout << "Extend = " << (ptr2->extend()) << endl;
             break;
         }
         case '3':
         {
             Polyhedra *ptr3 = new Cube;
-            ptr3->GetData();
-            cout << "Square = " << (ptr3->Square()) << endl;
-            cout << "Extend = " << (ptr3->Extend())<<endl;
+            ptr3->getdata();
+            cout << "Square = " << (ptr3->square()) << endl;
+            cout << "Extend = " << (ptr3->extend())<<endl;
             break;
         }
         case '4':
         {
             Spheric *ptr4 = new Sphere;
-            ptr4->GetData();
-            cout << "Square = " << (ptr4->Square()) << endl;
-            cout << "Extend = " << (ptr4->Extend()) << endl;
+            ptr4->getdata();
+            cout << "Square = " << (ptr4->square()) << endl;
+            cout << "Extend = " << (ptr4->extend()) << endl;
             break;
         }
         case '5':
         {
             Spheric *ptr5 = new Elipsoid;
-            ptr5->GetData();
-            cout << "Square = " << (ptr5->Square()) << endl;
-            cout << "Extend = " <<(ptr5->Extend()) << endl;
+            ptr5->getdata();
+            cout << "Square = " << (ptr5->square()) << endl;
+            cout << "Extend = " <<(ptr5->extend()) << endl;
             break;
         }
         case '6':
         {
             Spheric *ptr6 = new Cylinder;
-            ptr6->GetData();
-            cout << "Square = " << (ptr6->Square()) << endl;
-            cout << "Extend = " << (ptr6->Extend())<<endl;
+            ptr6->getdata();
+            cout << "Square = " << (ptr6->square()) << endl;
+            cout << "Extend = " << (ptr6->extend())<<endl;
             break;
         }
             
