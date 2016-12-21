@@ -3,7 +3,7 @@
 #include <vector>
 #include <math.h>
 using namespace std;
-//I've deleted class with position, because in this project it was no necessity
+//I've deleted class with position, because in this project it was no necessary
 
 
 class Figure3D
@@ -46,8 +46,6 @@ class Polyhedra : public Figure3D
 
 class Cone : public Spheric
 {
-    private:
-        int h;
     public:
         int GetData()
         {
@@ -87,8 +85,7 @@ class Elipsoid : public Spheric
             {
                 return 4/3*3.14*a*b*c;
             }
-        private:
-            int a, b, c;
+
     };
     
 
@@ -118,8 +115,7 @@ class Sphere : public Spheric
 
 class Cylinder : public Spheric
 {
-    private:
-        int h;
+
     public:
         int GetData()
             {
@@ -161,9 +157,6 @@ class Parallelepiped : public Polyhedra
             {
                 return a*b*c;
             }
-        private:
-            int a, b, c;
-
 };
 
 
@@ -187,8 +180,7 @@ class Cube : public Polyhedra
             {
                 return a*a*a;
             }
-    private:
-        int a;
+
     };
 
 
