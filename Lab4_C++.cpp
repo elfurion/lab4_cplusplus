@@ -85,13 +85,16 @@ class Elipsoid : public Spheric
             {
                 return 4/3*3.14*a*b*c;
             }
+        private:
+            int a,b,c;
+
 
     };
     
 
 
 
-class Sphere : public spheric
+class Sphere : public Spheric
 {
 
     public:
@@ -199,7 +202,7 @@ int main()
     
     switch (choise)
     {
-        case '1':
+        case 1:
         {
             Spheric *ptr1 = new Cone;
             ptr1->getdata();
@@ -207,7 +210,7 @@ int main()
             cout << "Extend = " <<(ptr1->extend()) << endl;
             break;
         }
-        case '2':
+        case 2:
         {
             Polyhedra *ptr2 = new Parallelepiped;
             ptr2->getdata();
@@ -223,7 +226,7 @@ int main()
             cout << "Extend = " << (ptr3->extend())<<endl;
             break;
         }
-        case '4':
+        case 4:
         {
             Spheric *ptr4 = new Sphere;
             ptr4->getdata();
@@ -231,7 +234,7 @@ int main()
             cout << "Extend = " << (ptr4->extend()) << endl;
             break;
         }
-        case '5':
+        case 5:
         {
             Spheric *ptr5 = new Elipsoid;
             ptr5->getdata();
@@ -239,7 +242,7 @@ int main()
             cout << "Extend = " <<(ptr5->extend()) << endl;
             break;
         }
-        case '6':
+        case 6:
         {
             Spheric *ptr6 = new Cylinder;
             ptr6->getdata();
